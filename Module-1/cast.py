@@ -1,7 +1,6 @@
 """a=456.46
 
 print("A=",a)
-
 print(int(a))"""
 
 
