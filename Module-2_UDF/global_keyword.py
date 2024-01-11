@@ -1,6 +1,6 @@
 a=54
 
-print("A=",a)
+#print("A=",a)
 
 def getnum():
     global a
