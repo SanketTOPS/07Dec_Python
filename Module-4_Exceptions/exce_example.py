@@ -1,7 +1,8 @@
+
 a=34
 b=76
 
-print("Sum:",A+b)
+print("Sum:",a+b)
 
 
 x=54
