@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showdata</title>
+</head>
+<body style="background-color: rgb(229, 234, 138);">
+    <center><h1>Showdata</h1></center>
+    <hr>
+    <!-- {{stdata}} -->
+    <!-- {%for i in stdata%}
+    {{i.id}}
+    {{i.name}}
+    {{i.email}}
+    {{i.dob}}
+    {{i.mobile}}
+    {%endfor%} -->
+    <table align="center" border="2">
+        <tr>
+            <th>ID</th>
+            <th>Firstame</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Mobile</th>
+            <th>Delete Data</th>
+        </tr>
+        {%for i in stdata%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.firstname}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.mobile}}</td>
+            <td><a href="/deletedata/{{i.id}}">Delete</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

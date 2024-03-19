@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import *
 
 # Create your views here.
@@ -14,3 +14,13 @@ def index(request):
             print(newst.errors)
             msg="Error!Something went wrong..."
     return render(request,'index.html',{'msg':msg})
+
+def showdata(request):
+    stdata=studinfo.objects.all()
+    return render(request,'showdata.html',{'stdata':stdata})
+
+def deletedata(request,id):
+    stid=studinfo.objects.get(id=id)
+    studinfo.delete(stid)
+    return redirect('showdata')
+
