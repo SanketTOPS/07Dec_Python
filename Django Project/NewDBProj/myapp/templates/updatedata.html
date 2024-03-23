@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+</head>
+<body style="background-color: azure;">
+    <center><h1>Update your data</h1></center>
+    <hr>
+    <center><h2 style="color: brown;">{{msg}}</h2></center>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" value="{{stid.firstname}}" name="firstname" placeholder="Firstname" required><br><br>
+        <input type="text" value="{{stid.lastname}}" name="lastname" placeholder="Lastname" required><br><br>
+        <input type="date" value="{{stid.dob|date:'Y-m-d'}}" name="dob"><br><br>
+        <input type="email" value="{{stid.email}}" name="email" placeholder="Email" required><br><br>
+        <input type="number" value="{{stid.mobile}}" name="mobile" placeholder="Mobile" required><br><br>
+        <input type="submit" value="Update">
+        <input type="reset">
+    </form>
+    <hr>
+    <a href="/showdata">Showdata</a>
+</body>
+</html>

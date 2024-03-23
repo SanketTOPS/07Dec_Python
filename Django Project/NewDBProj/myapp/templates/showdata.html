@@ -25,6 +25,7 @@
             <th>DOB</th>
             <th>Mobile</th>
             <th>Delete Data</th>
+            <th>Update Data</th>
         </tr>
         {%for i in stdata%}
         <tr>
@@ -35,6 +36,7 @@
             <td>{{i.dob}}</td>
             <td>{{i.mobile}}</td>
             <td><a href="/deletedata/{{i.id}}">Delete</td>
+                <td><a href="/updatedata/{{i.id}}">Update</td>
         </tr>
         {%endfor%}
     </table>

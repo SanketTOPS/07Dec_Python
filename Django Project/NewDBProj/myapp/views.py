@@ -24,3 +24,14 @@ def deletedata(request,id):
     studinfo.delete(stid)
     return redirect('showdata')
 
+def updatedata(request,id):
+    stid=studinfo.objects.get(id=id)
+    if request.method=='POST':
+        updateuser=studform(request.POST,instance=stid)
+        if updateuser.is_valid():
+            updateuser.save()
+            print("Record Updated!")
+            return redirect('showdata')
+        else:
+            print(updateuser.errors)
+    return render(request,'updatedata.html',{'stid':stid})
