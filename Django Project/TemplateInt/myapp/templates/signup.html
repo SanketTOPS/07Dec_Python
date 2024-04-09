@@ -70,6 +70,7 @@ https://www.tooplate.com/view/2127-little-fashion
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
                                     <form role="form" method="post">
+                                        {% csrf_token %}
 
                                         <div class="form-floating">
                                             <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
@@ -86,7 +87,7 @@ https://www.tooplate.com/view/2127-little-fashion
                                         </div>
 
                                         <div class="form-floating">
-                                            <input type="password" name="confirm_password" id="confirm_password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required>
+                                            <input type="password" name="cpassword" id="confirm_password" pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required>
 
                                             <label for="confirm_password">Password Confirmation</label>
                                         </div>

@@ -10,6 +10,6 @@ urlpatterns = [
    path('faq/',views.faq),
    path('productdetail/',views.productdetail),
    path('products/',views.products),
-   path('signin/',views.signin),
+   path('signin/',views.signin,name='signin'),
    path('signup/',views.signup),
 ]
