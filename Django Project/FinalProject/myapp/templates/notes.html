@@ -64,7 +64,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/profile">Update Profile</a></li>
                         <li><a class="dropdown-item" href="/userlogout">Logout</a></li>
-                        
+
                     </ul>
                 </div>
                 {% endif %}
@@ -72,6 +72,38 @@
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Notes Form Start -->
+    <div class="container my-5">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Query Title</label>
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+            </div>
+
+            <select class="form-select" name="cate" aria-label="Default select example">
+                <option selected>Select your category</option>
+                <option>Core Python</option>
+                <option>Python Framework</option>
+                <option>JAVA</option>
+                <option>PHP</option>
+                <option>Android/iOS</option>
+            </select>
+
+            <div class="mb-3 my-3">
+                <label for="formFile" class="form-label">Upload your file's</label>
+                <input class="form-control" name="myfile" type="file" id="formFile">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Problem Description</label>
+                <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Submit Notes</button>
+        </form>
+    </div>
+    <!-- Notes Form Start -->
 </body>
 
 </html>

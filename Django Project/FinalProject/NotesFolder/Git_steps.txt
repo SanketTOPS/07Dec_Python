@@ -1,0 +1,22 @@
+Github
+====================
+
+1).Create a github account.
+2).Create a repository(with batch name) on github account.
+3).Create a folder(Module wise) in repository.
+3).Upload your data (Module wise)
+	-If Assignments questions are theory, so upload PDF file only.
+	-If Assignments questions are program, so upload proper extention file only.(eg: .c, .cpp, .java, .py, etc)
+4).For final project submission, Create a seprate repo. and upload each and every files and dire. on project's repo.
+
+
+Behance (for GD and UI/UX only)
+====================================
+1).Create a behance account using gmail.
+2).Create a project on behance account.
+3).Upload your data Album wise)
+	-If Assignments questions are practical, so upload proper extention file only.(eg: .jpg, .jpeg, .png)
+4).For final project portfolio, Create a seprate album and upload each and every files and dire. on project's album.
+
+
+

@@ -54,12 +54,26 @@ def signup(request):
 def notes(request):
     #user=request.session.get('user')
     user=request.session.get('user')
+    if request.method=='POST':
+        newnotes=notesForm(request.POST,request.FILES)
+        if newnotes.is_valid():
+            newnotes.save()
+            print("Your notes has been submitted!")
+        else:
+            print(newnotes.errors)
     return render(request,'notes.html',{'user':user})
 
 def profile(request):
     user=request.session.get('user')
     uid=request.session.get('uid')
     cuser=usersignup.objects.get(id=uid)
+    if request.method=='POST':
+        updateuser=updateForm(request.POST,instance=cuser)
+        if updateuser.is_valid():
+            updateuser.save()
+            print("Your profile has been updated!")
+        else:
+            print(updateuser.errors)
     return render(request,'profile.html',{'user':user,'cuser':cuser})
 
 def about(request):
