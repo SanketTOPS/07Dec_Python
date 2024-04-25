@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 import random
 from FinalProject import settings
 from django.contrib.auth import logout
+import requests
 
 # Create your views here.
 def index(request):
@@ -30,6 +31,7 @@ def signin(request):
             print("Error!Something went wrong...Try again")
     return render(request,'signin.html')
 
+otp=random.randint(1111,9999)
 def signup(request):
     if request.method=='POST':
         newuser=signupForm(request.POST)
@@ -37,9 +39,20 @@ def signup(request):
             newuser.save()
             print("Signup Successfully!")
 
+            #Send OTP on Mobile
+            
+            url = "https://www.fast2sms.com/dev/bulkV2"
+            querystring = {"authorization":"KEodGZf5czOn3eCxJPkWAFHQUYtS86Rbmrv1MyuViag4hs7N2DujvzKSw5MN9mRryb3LC4DsIHiWph78","variables_values":f"{otp}","route":"otp","numbers":"9328480560,7567626592,9016142910,8511583024"}
+            headers = {
+                'cache-control': "no-cache"
+            }
+            response = requests.request("GET", url, headers=headers, params=querystring)
+
+            print(response.text)
+
+
             #Send Email for OTP
-            global otp
-            otp=random.randint(1111,9999)
+           
             sub="OTP Verification for New user!"
             msg=f"Dear User!\n\nThanks for registraion with us!\nYour one time password is {otp}\n\nThanks & Regards!\nNotesApp Team - Rajkot\n+91 97247 99469 | www.tops-int.com"
             from_email=settings.EMAIL_HOST_USER
