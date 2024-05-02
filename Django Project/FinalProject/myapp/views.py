@@ -93,6 +93,13 @@ def about(request):
     return render(request,'about.html')
 
 def contact(request):
+    if request.method=='POST':
+        newcallback=callbackForm(request.POST)
+        if newcallback.is_valid():
+            newcallback.save()
+            print("Your request has been submitted!")
+        else:
+            print(newcallback.errors)
     return render(request,'contact.html')
 
 def otpverify(request):

@@ -15,3 +15,8 @@ class notesForm(forms.ModelForm):
     class Meta:
         model=notes
         fields='__all__'
+
+class callbackForm(forms.ModelForm):
+    class Meta:
+        model=callback
+        fields='__all__'

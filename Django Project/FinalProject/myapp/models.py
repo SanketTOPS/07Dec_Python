@@ -20,3 +20,9 @@ class notes(models.Model):
     myfile=models.FileField(upload_to='NotesFolder')
     desc=models.TextField()
 
+class callback(models.Model):
+    created=models.DateTimeField(auto_now_add=True)
+    fullname=models.CharField(max_length=20)
+    phone=models.BigIntegerField()
+    email=models.EmailField()
+    msg=models.TextField()
